@@ -1,11 +1,11 @@
+// Essential Imports
 import { Container, FormControl, Input, InputLabel, Typography,Table, TableHead, TableCell, TableRow, TableBody, Button } from '@mui/material'
-
 import React, { useState } from 'react'
 import { useNavigate,Link } from 'react-router-dom';
 import { deleteUser, userPage } from '../Service/api';
 
+// Component
 function Login() {
-
     // All constants
     const initialValue = {
         email: '',
@@ -94,7 +94,7 @@ function Login() {
         <div>
             {
                 (!ruser) ?
-                    <div>
+                    <>
                         <div style={{ marginLeft: '45%', marginTop: '10%' }}>
                             <Container>
                                 <Typography variant="h4">Log In</Typography>
@@ -111,7 +111,7 @@ function Login() {
                                 </FormControl>
                             </Container>
                         </div>
-                    </div> :
+                    </> :
                     <div>
                         <>
                             <h1 style={{ textAlign: 'center' }} >Now You are Logged In</h1>

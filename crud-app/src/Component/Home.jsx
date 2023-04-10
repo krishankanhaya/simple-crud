@@ -1,17 +1,12 @@
-
-
 import { Box, Typography, styled } from '@mui/material';
-
-
+// Constants
 const Header = styled(Box)`
     margin: 50px;
     & > div {
         margin-top: 50px;
     }
 `;
-
-
-
+// Components
 const Home = () => {
 
     return (
@@ -20,5 +15,4 @@ const Home = () => {
         </Header>
     )
 }
-
 export default Home;

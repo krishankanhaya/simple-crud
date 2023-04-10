@@ -1,8 +1,8 @@
-import { useState } from 'react';
 import { FormGroup, FormControl, InputLabel, Input, Button, styled, Typography } from '@mui/material';
+import { useState } from 'react';
 import { addUser } from '../Service/api';
 
-
+// Constants
 const initialValue = {
     name: '',
     pincode: '',
