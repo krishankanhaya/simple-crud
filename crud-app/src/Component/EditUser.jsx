@@ -23,7 +23,7 @@ const EditUser = () => {
     let navigate = useNavigate();
     useEffect(() => {
         loadUserDetails();
-    }, );
+    }, []);
     const loadUserDetails = async() => {
         const response = await getUsers(id);
         setUser(response.data);
@@ -36,7 +36,6 @@ const EditUser = () => {
         console.log(e.target.value);
         setUser({...user, [e.target.name]: e.target.value})
     }
-
     return (
         <Container injectFirst>
             <Typography variant="h4">Edit Information</Typography>
@@ -62,5 +61,4 @@ const EditUser = () => {
         </Container>
     )
 }
-
 export default EditUser;

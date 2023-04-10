@@ -56,6 +56,8 @@ const AddUser = () => {
               }
             }
         }
+    }else{
+        window.alert("You Have to fill all details.")
     }
         }
     return (

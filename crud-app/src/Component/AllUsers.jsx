@@ -37,6 +37,7 @@ const AllUsers = () => {
     const getAllUsers = async (email) => {
         let response = await getUsersD(email);
         setUsers(response.data);
+        
     }
     console.log(users)
 

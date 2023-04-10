@@ -39,8 +39,8 @@ export const editUser = async (request, response) => {
 
     const editUser = new User(user);
     try{
-        await User.updateOne({_id: request.params.id}, editUser);
-        response.status(201).json(editUser);
+        const res = await User.updateOne({_id: request.params.id}, editUser);
+        response.status(201).json(res);
     } catch (error){
         response.status(409).json({ message: error.message});     
     }
