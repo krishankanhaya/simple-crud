@@ -10,15 +10,16 @@ import UserPage from './Component/UserPage';
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter >
       <NavBar />
       <Routes>
         <Route path="/" element={<Home /> } />
-        <Route path="all" element={<AllUsers /> } />
+        <Route path="/:email" element={<AllUsers /> } />
         <Route path="/add" element={<AddUser />} />
         <Route path="/edit/:id" element={<EditUser />} />
+        {/* <Route path="/login/:email" element={<AllUsers />} /> */}
         <Route path="/login" element={<Login />} />
-        <Route path="/userpage" element={<UserPage />} /> 
+        <Route path="/email" element={<UserPage />} /> 
         <Route path='/*' element={<NotFound />} />
       </Routes>
     </BrowserRouter>

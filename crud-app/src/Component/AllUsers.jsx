@@ -1,6 +1,6 @@
 import  { useState, useEffect } from 'react';
 import { Table, TableHead, TableCell, TableRow, TableBody, Button, styled } from '@mui/material'
-import { getUsers, deleteUser } from '../Service/api';
+import { getUsers, deleteUser, getUsersD } from '../Service/api';
 import { Link } from 'react-router-dom';
 
 const StyledTable = styled(Table)`
@@ -24,7 +24,7 @@ const TRow = styled(TableRow)`
 
 const AllUsers = () => {
     const [users, setUsers] = useState([]);
-    
+
     useEffect(() => {
         getAllUsers();
     }, []);
@@ -34,10 +34,11 @@ const AllUsers = () => {
         getAllUsers();
     }
 
-    const getAllUsers = async () => {
-        let response = await getUsers();
+    const getAllUsers = async (email) => {
+        let response = await getUsersD(email);
         setUsers(response.data);
     }
+    console.log(users)
 
     return (
         <>
@@ -55,19 +56,18 @@ const AllUsers = () => {
                 </THead>
             </TableHead>
             <TableBody>
-                { users.map((user) => (
-                    <TRow key={user.id}>
-                        <TableCell>{user._id}</TableCell> {/* change it to user.id to use JSON Server */}
-                        <TableCell>{user.name}</TableCell>
-                        <TableCell>{user.pincode}</TableCell>
-                        <TableCell>{user.email}</TableCell>
-                        <TableCell>{user.phone}</TableCell>
+                   <TRow key={users.id}>
+                        <TableCell></TableCell> 
+                        <TableCell>{users.name}</TableCell>
+                        <TableCell>{users.pincode}</TableCell>
+                        <TableCell>{users.email}</TableCell>
+                        <TableCell>{users.phone}</TableCell>
                         <TableCell>
-                            <Button color="primary" variant="contained" style={{marginRight:10}} component={Link} to={`/edit/${user._id}`}>Edit</Button> {/* change it to user.id to use JSON Server */}
-                            <Button color="secondary" variant="contained" onClick={() => deleteUserData(user._id)}>Delete</Button> {/* change it to user.id to use JSON Server */}
+                            <Button color="primary" variant="contained" style={{marginRight:10}} component={Link} to={`/edit/${users._id}`}>Edit</Button> 
+                            <Button color="secondary" variant="contained" onClick={() => deleteUserData(users._id)}>Delete</Button> 
                         </TableCell>
                     </TRow>
-                ))}
+                    <p>{}</p>
             </TableBody>
         </StyledTable>
         </>

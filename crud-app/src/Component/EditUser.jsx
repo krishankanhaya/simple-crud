@@ -16,28 +16,22 @@ const Container = styled(FormGroup)`
     & > div {
         margin-top: 20px
 `;
-
 const EditUser = () => {
     const [user, setUser] = useState(initialValue);
     const { name, pincode, email, phone } = user;
-    const { id } = useParams();
-    
+    const { id } = useParams(); 
     let navigate = useNavigate();
-
     useEffect(() => {
         loadUserDetails();
     }, );
-
     const loadUserDetails = async() => {
         const response = await getUsers(id);
         setUser(response.data);
     }
-
     const editUserDetails = async() => {
         await editUser(id, user);
         navigate('/all');
     }
-
     const onValueChange = (e) => {
         console.log(e.target.value);
         setUser({...user, [e.target.name]: e.target.value})

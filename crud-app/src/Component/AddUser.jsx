@@ -43,14 +43,20 @@ const AddUser = () => {
             window.alert("Pincode must have 6 digits.")
         }
         else{
-        await addUser(user);
-        setUser(initialValue)
-        window.alert('Your Sign is completed.')
+            try{
+                const signInSuccessful = await addUser(user);
+                setUser(initialValue)
+                if(signInSuccessful){
+                    window.alert(`Registration Successfull. Name : ${user.name} and Email : ${user.email}`)
+                }
+            }
+            catch(error){
+              if(error.response.status === 409){
+                window.alert('User with the given email address is already exist.')
+              }
+            }
         }
     }
-    else{
-            window.alert('Please complete your details first')
-        }
         }
     return (
         <Container>
