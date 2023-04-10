@@ -95,9 +95,9 @@ function Login() {
             {
                 (!ruser) ?
                     <>
-                        <div style={{ marginLeft: '45%', marginTop: '10%' }}>
-                            <Container style={{ marginLeft: '0%', marginTop: '10%' }}>
-                                <Typography variant="h4">Log In</Typography>
+                        <div style={{ marginLeft: '45%', marginTop: '0%' }}>
+                            <Container style={{ marginLeft: '-5%', marginTop: '10%' }}>
+                                <Typography style={{ marginLeft: '5%'}} variant="h4">Log In</Typography>
                                 <FormControl>
                                     <InputLabel htmlFor="my-input">Email</InputLabel>
                                     <Input onChange={(e) => onValueChange(e)} name='email' value={email} id="my-input" />

@@ -10,7 +10,7 @@ const Header = styled(Box)`
 const Home = () => {
 
     return (
-        <Header>
+        <Header style={{textAlign: 'center'}}>
             <Typography variant="h4">This is Home Page</Typography>
         </Header>
     )

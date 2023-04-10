@@ -1,9 +1,12 @@
 import axios from 'axios';
 const usersUrl = 'http://localhost:8080';
+
+// editing fetch
 export const getUsers = async (id) => {
     id = id || '';
     return await axios.get(`${usersUrl}/${id}`);
 }
+// login fetch
 export const getUsersD = async (email) => {
     return await axios.get(`${usersUrl}/?email=${email}`,email);
 }
