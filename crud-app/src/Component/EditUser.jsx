@@ -30,7 +30,9 @@ const EditUser = () => {
     }
     const editUserDetails = async () => {
         await editUser(id, user);
-        navigate('/all');
+        { /* navigate('/all'); */}
+        window.alert("Your Data is Updated Successfully.");
+        navigate("/");
     }
     const onValueChange = (e) => {
         console.log(e.target.value);

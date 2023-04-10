@@ -96,7 +96,7 @@ function Login() {
                 (!ruser) ?
                     <>
                         <div style={{ marginLeft: '45%', marginTop: '10%' }}>
-                            <Container>
+                            <Container style={{ marginLeft: '0%', marginTop: '10%' }}>
                                 <Typography variant="h4">Log In</Typography>
                                 <FormControl>
                                     <InputLabel htmlFor="my-input">Email</InputLabel>
@@ -107,7 +107,7 @@ function Login() {
                                     <Input onChange={(e) => onValueChange(e)} name='phone' value={phone} id="my-input" />
                                 </FormControl><br></br>
                                 <FormControl>
-                                    <Button id='login-btn' variant="contained" color="primary" onClick={() => loginDetails()} >Log In</Button>
+                                    <Button style={{ marginLeft: '10%', marginTop: '10%', width: '10rem' }} id='login-btn' variant="contained" color="primary" onClick={() => loginDetails()} >Log In</Button>
                                 </FormControl>
                             </Container>
                         </div>

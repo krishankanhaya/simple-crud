@@ -19,7 +19,7 @@ const NavBar = () => {
         <Header position="static">
             <Toolbar style={{ display: 'flex', justifyContent: 'space-around' }}>
                 <Tabs to="./" exact>Home</Tabs>
-                <Tabs to="/add" exact>Register</Tabs>
+                <Tabs to="/register" exact>Register</Tabs>
                 <Tabs to="/login" exact>Log In</Tabs>
             </Toolbar>
         </Header>

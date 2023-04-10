@@ -11,7 +11,7 @@ export const userPage = async (email) => {
     return await axios.get(`${usersUrl}/?email=${email}`,email);
 }
 export const addUser = async (user) => {
-    return await axios.post(`${usersUrl}/add`, user);
+    return await axios.post(`${usersUrl}/register`, user);
 }
 export const deleteUser = async (id) => {
     return await axios.delete(`${usersUrl}/${id}`);
