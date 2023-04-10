@@ -46,10 +46,10 @@ const AddUser = () => {
             try{
                 const signInSuccessful = await addUser(user);
                 setUser(initialValue)
-                if(signInSuccessful){
-                    window.alert(`Registration Successfull. Name : ${user.name} and Email : ${user.email}`)
+                    if(signInSuccessful){
+                        window.alert(`Registration Successfull. Name : ${user.name} and Email : ${user.email}`);
+                    }
                 }
-            }
             catch(error){
               if(error.response.status === 409){
                 window.alert('User with the given email address is already exist.')
