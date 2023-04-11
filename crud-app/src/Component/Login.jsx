@@ -26,7 +26,7 @@ function Login() {
     let navigate = useNavigate();
     function isEmail(str) {
         //regular expression email validation
-        var pattern = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+        var pattern = /^\w+([-]?\w+)*@\w+([-]?\w+)*(\.\w{2,3})+$/;
         return pattern.test(str);
     }
     // getting one user from all
