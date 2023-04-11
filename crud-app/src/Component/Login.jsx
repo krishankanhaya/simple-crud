@@ -44,7 +44,8 @@ function Login() {
         const cnf = window.confirm("Are you sure want delete your account.")
         if (cnf) {
             await deleteUser(id);
-            navigate('/')
+            window.alert("Your account deleted successfully.");
+            navigate('/');
 
         }
     }
