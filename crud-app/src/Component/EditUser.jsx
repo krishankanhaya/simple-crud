@@ -21,7 +21,7 @@ const EditUser = () => {
     const { name, pincode, email, phone } = user;
     const { id } = useParams();
     let navigate = useNavigate();
-    useEffect(() =>{
+    { /* useEffect(() =>{
             const loadUserDetails = async () => {
             const response = await getUsers(id);
             setUser(response.data);
@@ -31,7 +31,7 @@ const EditUser = () => {
     const loadUserDetails = async () => {
         const response = await getUsers(id);
         setUser(response.data);
-    }
+    } */}
     const editUserDetails = async () => {
         await editUser(id, user);
         window.alert("Your Data is Updated Successfully.");
