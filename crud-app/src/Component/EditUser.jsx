@@ -21,17 +21,13 @@ const EditUser = () => {
     const { name, pincode, email, phone } = user;
     const { id } = useParams();
     let navigate = useNavigate();
-    { /* useEffect(() =>{
-            const loadUserDetails = async () => {
+    useEffect(() => {
+        const getUser = async () => {
             const response = await getUsers(id);
             setUser(response.data);
         };
-    loadUserDetails()
-    }, []);
-    const loadUserDetails = async () => {
-        const response = await getUsers(id);
-        setUser(response.data);
-    } */}
+        getUser();
+    }, [id]);
     const editUserDetails = async () => {
         await editUser(id, user);
         window.alert("Your Data is Updated Successfully.");
@@ -45,23 +41,23 @@ const EditUser = () => {
         <Container injectFirst>
             <Typography variant="h4">Edit Information</Typography>
             <FormControl>
-                <InputLabel htmlFor="my-input">Name</InputLabel>
-                <Input onChange={(e) => onValueChange(e)} name='name' value={name} id="my-input" aria-describedby="my-helper-text" />
+                <InputLabel htmlFor="name-input">Name</InputLabel>
+                <Input onChange={(e) => onValueChange(e)} name='name' value={name} id="name-input" aria-describedby="name-helper-text" />
             </FormControl>
             <FormControl>
-                <InputLabel htmlFor="my-input">Pincode</InputLabel>
-                <Input onChange={(e) => onValueChange(e)} name='pincode' value={pincode} id="my-input" aria-describedby="my-helper-text" />
+                <InputLabel htmlFor="pincode-input">Pincode</InputLabel>
+                <Input onChange={(e) => onValueChange(e)} name='pincode' value={pincode} id="pincode-input" aria-describedby="pincode-helper-text" />
             </FormControl>
             <FormControl>
-                <InputLabel htmlFor="my-input">Email</InputLabel>
-                <Input onChange={(e) => onValueChange(e)} name='email' value={email} id="my-input" aria-describedby="my-helper-text" />
+                <InputLabel htmlFor="email-input">Email</InputLabel>
+                <Input onChange={(e) => onValueChange(e)} name='email' value={email} id="email-input" aria-describedby="email-helper-text" />
             </FormControl>
             <FormControl>
-                <InputLabel htmlFor="my-input">Phone</InputLabel>
-                <Input onChange={(e) => onValueChange(e)} name='phone' value={phone} id="my-input" aria-describedby="my-helper-text" />
+                <InputLabel htmlFor="phone-input">Phone</InputLabel>
+                <Input onChange={(e) => onValueChange(e)} name='phone' value={phone} id="phone-input" aria-describedby="phone-helper-text" />
             </FormControl>
             <FormControl>
-                <Button variant="contained" color="primary" onClick={() => editUserDetails()}>Edit User</Button>
+                <Button variant="contained" color="primary" type="button" onClick={() => editUserDetails()}>Edit User</Button>
             </FormControl>
         </Container>
     )
