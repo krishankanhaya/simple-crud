@@ -25,7 +25,7 @@ const AddUser = () => {
     }
     // fucction to check  email is valid or Not
     function isEmail(str) {
-    var pattern = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+    var pattern = /^\w+([-]?\w+)*@\w+([-]?\w+)*(\.\w{2,3})+$/;
     return pattern.test(str);
     }
     const addUserDetails = async() => {
