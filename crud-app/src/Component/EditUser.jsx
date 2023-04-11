@@ -22,7 +22,7 @@ const EditUser = () => {
     const { id } = useParams();
     let navigate = useNavigate();
     useEffect(() => {
-        loadUserDetails();
+        loadUserDetails()
     }, []);
     const loadUserDetails = async () => {
         const response = await getUsers(id);
@@ -30,7 +30,6 @@ const EditUser = () => {
     }
     const editUserDetails = async () => {
         await editUser(id, user);
-        { /* navigate('/all'); */}
         window.alert("Your Data is Updated Successfully.");
         navigate("/");
     }
