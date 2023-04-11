@@ -34,6 +34,8 @@ function Login() {
         return response.map((user) => {
             if (user.email === email) {
                 return user;
+            }else{
+                return undefined;
             }
         })
     }
