@@ -21,8 +21,12 @@ const EditUser = () => {
     const { name, pincode, email, phone } = user;
     const { id } = useParams();
     let navigate = useNavigate();
-    useEffect(() => {
-        loadUserDetails()
+    useEffect(() =>{
+            const loadUserDetails = async () => {
+            const response = await getUsers(id);
+            setUser(response.data);
+        };
+    loadUserDetails()
     }, []);
     const loadUserDetails = async () => {
         const response = await getUsers(id);
